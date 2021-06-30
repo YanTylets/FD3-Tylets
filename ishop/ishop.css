@@ -1,0 +1,14 @@
+.Main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Table {
+    border-collapse: collapse;
+}
+.Table-header > tr > th {
+    border: 2px solid black;
+}
+.Table-body > tr > td {
+    border: 1px solid black;
+}
