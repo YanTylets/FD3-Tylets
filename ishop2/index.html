@@ -12,8 +12,10 @@
     <script src="https://unpkg.com/react@15/dist/react.js"></script> 
     <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script> 
         
-    <script src="ishop.js" ></script>
-    <link rel="stylesheet" type="text/css" href="ishop.css" />
+    <script src="MainShop.js" ></script>
+    <script src="Product.js" ></script>
+    <link rel="stylesheet" type="text/css" href="MainShop.css" />
+    <link rel="stylesheet" type="text/css" href="Product.css" />
   
     <script>
   
@@ -27,7 +29,7 @@
       ];
   
       ReactDOM.render(
-        React.createElement(DrugsList, {shopName:ishopName, drugs:drugsArr}), 
+        React.createElement(MainShop, {shopName:ishopName, drugs:drugsArr}), 
         document.getElementById('container')
       );
   
