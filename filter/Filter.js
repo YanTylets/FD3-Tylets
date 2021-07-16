@@ -17,7 +17,7 @@ var Filter = React.createClass({
     sortABC: function() {
         if(this.state.checkboxClicked == false) {
           let newStrings = this.state.strings.slice();
-          this.setState( {strings:newStrings.sort(), checkboxClicked: true, checked: true } );
+          this.setState( {strings:newStrings.sort(), checkboxClicked: true, checked: true} );
         } else {
           this.setState( {strings:this.props.strings,
           checkboxClicked: false, checked: false } );
@@ -32,8 +32,7 @@ var Filter = React.createClass({
         },
 
     letterSort: function(EO) { 
-            console.log('VotesAnswer: текст свободного ответа изменён - '+EO.target.value);
-            this.setState( {changedText: EO.target.value, strings:this.state.strings.filter(i => i.indexOf(EO.target.value)!=-1)} );
+            this.setState( {changedText: EO.target.value, strings:this.props.strings.filter(i => i.indexOf(EO.target.value)!=-1)} );
             console.log(this.state.changedText);
             console.log(this.state.strings);
             console.log(this.props.strings);
