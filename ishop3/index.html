@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div> 
+      
+    <script src="https://unpkg.com/react@15/dist/react.js"></script> 
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script> 
+        
+    <script src="MainShop.js" ></script>
+    <script src="Product.js" ></script>
+    <link rel="stylesheet" type="text/css" href="MainShop.css" />
+    <link rel="stylesheet" type="text/css" href="Product.css" />
+  
+    <script>
+  
+      var ishopName='iDrugs';
+      var drugsArr=[ 
+        {name:'Nimesil', code:1, price:10, photo:'https://images-na.ssl-images-amazon.com/images/I/71qU0ZbTVSL._AC_SL1500_.jpg', quantity:20, drugform:'powder'}, 
+        {name:'Ibufen', code:2, price:5, photo:'https://superapteka.by/wp-content/uploads/2021/01/30575.jpg', quantity:40, drugform:'capsule'}, 
+        {name:'Aspirin C', code:3, price:7, photo:'https://binsinaimages.azureedge.net/images/catalogimages/3055_1.jpg', quantity:30, drugform:'effervescent tablets'},
+        {name:'Voltaren', code:4, price:7, photo:'https://cdn.shopify.com/s/files/1/0010/8963/4323/products/Voltaren-sr-100mg-diclofenac-2_1024x1024.jpg', quantity:14, drugform:'tablets'},
+        {name:'Movalis', code:5, price:12, photo:'https://farmacie-online.md/166-large_default/friendly-url-autogeneration-failed.jpg', quantity:22, drugform:'ampules'}, 
+      ];
+  
+      ReactDOM.render(
+        React.createElement(MainShop, {shopName:ishopName, drugs:drugsArr}), 
+        document.getElementById('container')
+      );
+  
+    </script>
+</body>
+</html>
