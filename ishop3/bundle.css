@@ -1,0 +1,21 @@
+  .Main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Table {
+    border-collapse: collapse;
+}
+.Table-header > tr > th {
+    border: 2px solid black;
+}
+
+.Drugs-List > tr > td {
+    border: 1px solid black;
+}
+
+.product-active {
+    background-color: blue;
+}
+
+/*# sourceMappingURL=bundle.css.map*/
