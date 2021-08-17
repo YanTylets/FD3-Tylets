@@ -26,23 +26,24 @@ class MainShop extends React.Component {
        newProdBtnClass: 'new-product-btn',
        editOn: false,
        editedProductCode: null,
-       editedProductName: '',
-       editedProductPrice: null,
-       editedProductPhoto: '',
-       editedProductQuantity: null,
-       editedProductDrugform: '',
-       editedProductChange: false
+       editedProductName: false,
+       editedProductPrice: false,
+       editedProductPhoto: false,
+       editedProductQuantity: false,
+       editedProductDrugform: false, 
+       editedProductChange: false,
+       editedMarker: false
     }
 
     productSelected = (code) => {
       this.setState( {productClass: 'product'} );
       console.log('selected ' +code);
       this.setState( {selectedProductCode: code, editOn: false, newProdBtnClass: 'new-product-btn', deleteDisabled:false, 
-      editedProductName: '',
-      editedProductPrice: null,
-      editedProductPhoto: '',
-      editedProductQuantity: null,
-      editedProductDrugform: ''} );
+      editedProductName: false,
+      editedProductPrice: false,
+      editedProductPhoto: false,
+      editedProductQuantity: false,
+      editedProductDrugform: false, } );
       console.log(this.state.drugs);
       this.setState( {selectedProductCode: code} );
 
@@ -61,11 +62,14 @@ class MainShop extends React.Component {
 
     cancelNewProd = () => {
       this.setState( {newProductOn:false, newProdBtnClass: 'new-product-btn', 
-      deleteDisabled:false, editDisabled:false, editOn:false, editedProductName: '',
-      editedProductPrice: null,
-      editedProductPhoto: '',
-      editedProductQuantity: null,
-      editedProductDrugform: ''} )
+      deleteDisabled:false, editDisabled:false, editOn:false, 
+      editedProductName: false,
+      editedProductPrice: false,
+      editedProductPhoto: false,
+      editedProductQuantity: false,
+      editedProductDrugform: false, 
+      editedMarker: false,
+      editedProductChange: false} )
     }
 
     addNewProd = (prod) => {
@@ -74,22 +78,28 @@ class MainShop extends React.Component {
       console.log(this.state.drugs);
       this.setState ( {maxID: this.state.maxID+=1} )
     }
-    edit = (code, name, price, photo, quantity, drugform) => {
+    edit = (code) => {
       this.setState( {editOn: true, editedProductCode: code, selectedProductCode:null, 
         newProdBtnClass: 'new-product-btn-on', 
-        editedProductName: name,        
-        editedProductPrice: price,
-        editedProductPhoto: photo,
-        editedProductQuantity: quantity,
-        editedProductDrugform: drugform,
-        deleteDisabled:true
+        editedProductName: true,
+        editedProductPrice: true,
+        editedProductPhoto: true,
+        editedProductQuantity: true,
+        editedProductDrugform: true, 
+        deleteDisabled:true,
+        editedMarker: true
       } );
       
       console.log(this.state.editedProductName)
     }
 
-    changed = (a) => {
-      this.setState( { editedProductChange: a} );
+    changed = (name, price, photo, quantity, drugform) => {
+      this.setState( { editedProductChange: true, editDisabled: true,
+        editedProductName: name,
+        editedProductPrice: price,
+        editedProductPhoto: photo,
+        editedProductQuantity: quantity,
+        editedProductDrugform: drugform,} );
       console.log(this.state.editedProductChange)
     }
 
@@ -157,6 +167,7 @@ class MainShop extends React.Component {
             editedProductQuantity={this.state.editedProductQuantity}
             editedProductDrugform={this.state.editedProductDrugform}
             cbChanged={this.changed}
+            editedMarker={this.state.editedMarker}
             />
 
           </div>
