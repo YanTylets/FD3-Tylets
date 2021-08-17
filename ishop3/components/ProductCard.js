@@ -53,7 +53,7 @@ class ProductCard extends React.Component {
       if(this.props.editOn == true) {
         if(EO.target.value != this.props.editedProductName) {
           this.setState ( {wasChanged: true} );
-      } else if (EO.target.value != this.props.editedProductName) { this.setState ( {wasChanged: false} );
+      } else if (EO.target.value == this.props.editedProductName) { this.setState ( {wasChanged: false} );
     }
   }
       if((EO.target.value).length > 0 ) {
