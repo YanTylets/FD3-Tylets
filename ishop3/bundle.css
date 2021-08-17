@@ -1,31 +1,20 @@
   .Main {
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
 }
 .Table {
     border-collapse: collapse;
     width: fit-content;
-=======
-    align-items: center;
-}
-.Table {
-    border-collapse: collapse;
->>>>>>> 4bd5b47e9a9938e2f8e24d9f8078f8279fdd5df2
 }
 .Table-header > tr > th {
     border: 2px solid black;
 }
-<<<<<<< HEAD
 .new-product-btn {
     width: fit-content;
 }
 .new-product-btn-on {
     display: none;
 }
-=======
-
->>>>>>> 4bd5b47e9a9938e2f8e24d9f8078f8279fdd5df2
 .Drugs-List > tr > td {
     border: 1px solid black;
 }
@@ -33,7 +22,6 @@
 .product-active {
     background-color: blue;
 }
-<<<<<<< HEAD
 .card {
     display: flex;
     flex-direction: column;
@@ -68,7 +56,5 @@
    width: fit-content;
 }
 
-=======
->>>>>>> 4bd5b47e9a9938e2f8e24d9f8078f8279fdd5df2
 
 /*# sourceMappingURL=bundle.css.map*/
