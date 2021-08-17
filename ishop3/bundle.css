@@ -1,0 +1,60 @@
+  .Main {
+    display: flex;
+    flex-direction: column;
+}
+.Table {
+    border-collapse: collapse;
+    width: fit-content;
+}
+.Table-header > tr > th {
+    border: 2px solid black;
+}
+.new-product-btn {
+    width: fit-content;
+}
+.new-product-btn-on {
+    display: none;
+}
+.Drugs-List > tr > td {
+    border: 1px solid black;
+}
+
+.product-active {
+    background-color: blue;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+}
+.nothing {
+    display: none;
+}
+.new-product-card {
+    display: flex;
+    flex-direction: column;
+}
+.new-product-card > label > input {
+    width: 150px;
+}
+.new-product-card > label > span:nth-child(1) {
+    width: 80px;
+}
+.new-product-card > label > span:nth-child(3) {
+    color: red;
+    width: 440px;
+}
+.new-product-card > label {
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+}
+.new-product-card > label.buttons {
+    display: flex;
+    justify-content: flex-start;
+}
+.new-product-card > label.buttons > input{
+   width: fit-content;
+}
+
+
+/*# sourceMappingURL=bundle.css.map*/

@@ -1,0 +1,17 @@
+  .Main {
+    display: flex;
+    flex-direction: column;
+}
+.Table {
+    border-collapse: collapse;
+    width: fit-content;
+}
+.Table-header > tr > th {
+    border: 2px solid black;
+}
+.new-product-btn {
+    width: fit-content;
+}
+.new-product-btn-on {
+    display: none;
+}
