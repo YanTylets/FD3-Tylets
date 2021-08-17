@@ -4,7 +4,10 @@ import PropTypes from 'prop-types';
 import './MainShop.css';
 
 import Product from './Product';
+<<<<<<< HEAD
 import ProductCard from './ProductCard';
+=======
+>>>>>>> 4bd5b47e9a9938e2f8e24d9f8078f8279fdd5df2
 
 class MainShop extends React.Component {
 
@@ -17,6 +20,7 @@ class MainShop extends React.Component {
        drugs: this.props.drugs,
        productClass: 'product',
        productClassActive: 'product-active',
+<<<<<<< HEAD
        selectedProductCode: null,
        newProductOn: false,
        maxID: 6,
@@ -31,23 +35,32 @@ class MainShop extends React.Component {
        editedProductQuantity: null,
        editedProductDrugform: '',
        editedProductChange: false
+=======
+       selectedProductCode: null
+>>>>>>> 4bd5b47e9a9938e2f8e24d9f8078f8279fdd5df2
     }
 
     productSelected = (code) => {
       this.setState( {productClass: 'product'} );
       console.log('selected ' +code);
+<<<<<<< HEAD
       this.setState( {selectedProductCode: code, editOn: false, newProdBtnClass: 'new-product-btn', deleteDisabled:false, 
       editedProductName: '',
       editedProductPrice: null,
       editedProductPhoto: '',
       editedProductQuantity: null,
       editedProductDrugform: ''} );
+=======
+      console.log(this.state.drugs);
+      this.setState( {selectedProductCode: code} );
+>>>>>>> 4bd5b47e9a9938e2f8e24d9f8078f8279fdd5df2
   }
 
     delete = (code, name) => {
     if(confirm(`Delete '${name}'?`))  
     this.setState( {drugs: this.state.drugs.filter(i => i.code != code)} )                   
 }
+<<<<<<< HEAD
     newProduct = (e) => {
       this.setState( {newProductOn:true, 
         selectedProductCode:null, deleteDisabled:true, editDisabled:true,
@@ -88,6 +101,8 @@ class MainShop extends React.Component {
       console.log(this.state.editedProductChange)
     }
 
+=======
+>>>>>>> 4bd5b47e9a9938e2f8e24d9f8078f8279fdd5df2
 
     render() {
 
@@ -105,12 +120,15 @@ class MainShop extends React.Component {
               :
                this.state.productClass}
             cbdelete={this.delete}
+<<<<<<< HEAD
             deleteDisabled={this.state.deleteDisabled}
             editDisabled={this.state.editDisabled}
             newProductOn={this.state.newProductOn}
             cbedit={this.edit}
             editedProductChange={this.state.editedProductChange}
 
+=======
+>>>>>>> 4bd5b47e9a9938e2f8e24d9f8078f8279fdd5df2
           />
                
         );
@@ -133,6 +151,7 @@ class MainShop extends React.Component {
                 {drugsList}
               </tbody>
             </table>
+<<<<<<< HEAD
             <input className={this.state.newProdBtnClass} type="button" value="New product" onClick={this.newProduct}/>
             <ProductCard selectedProductCode={this.state.selectedProductCode}
             drugs={this.state.drugs}
@@ -149,6 +168,8 @@ class MainShop extends React.Component {
             editedProductDrugform={this.state.editedProductDrugform}
             cbChanged={this.changed}
             />
+=======
+>>>>>>> 4bd5b47e9a9938e2f8e24d9f8078f8279fdd5df2
           </div>
         )
     }
