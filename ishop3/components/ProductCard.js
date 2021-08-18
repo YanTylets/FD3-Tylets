@@ -14,7 +14,6 @@ class ProductCard extends React.Component {
         editOn: PropTypes.bool,
         editedProductCode: PropTypes.number,
         cbChanged: PropTypes.func,
-        editedMarker: PropTypes.bool,
         cbSave: PropTypes.func
     };
 
@@ -35,7 +34,8 @@ class ProductCard extends React.Component {
       priceChange: true, 
       photoChange: true, 
       quantityChange: true, 
-      drugformChange: true
+      drugformChange: true,
+      editValid: true
     }
 
     cancelBtn = (e) => {
@@ -56,7 +56,8 @@ class ProductCard extends React.Component {
           priceChange: true, 
           photoChange: true, 
           quantityChange: true, 
-          drugformChange: true
+          drugformChange: true,
+          editValid: true
         })
     }
 
@@ -64,11 +65,11 @@ class ProductCard extends React.Component {
       this.setState( {nameChange: false, inputName: EO.target.value} );
       if (this.props.editOn==true) {
         if(this.state.priceChange){
-          this.setState( {inputPrice: Number(this.props.drugs.map(e => e.code == this.props.editedProductCode && e.price).filter(a => a != false).join(""))} )};
+          this.setState( {inputPrice: (this.props.drugs.map(e => e.code == this.props.editedProductCode && e.price).filter(a => a != false).join(""))} )};
         if(this.state.photoChange){
           this.setState( {inputPhoto: this.props.drugs.map(e => e.code == this.props.editedProductCode && e.photo).filter(a => a != false).join("")} )};
         if(this.state.quantityChange){
-          this.setState( {inputQuantity: Number(this.props.drugs.map(e => e.code == this.props.editedProductCode && e.quantity).filter(a => a != false).join(""))} )};
+          this.setState( {inputQuantity: (this.props.drugs.map(e => e.code == this.props.editedProductCode && e.quantity).filter(a => a != false).join(""))} )};
         if(this.state.drugformChange){
           this.setState( {inputDrugform: this.props.drugs.map(e => e.code == this.props.editedProductCode && e.drugform).filter(a => a != false).join("")} )};
         this.setState( {
@@ -82,20 +83,21 @@ class ProductCard extends React.Component {
         this.setState( {inputNameValid: true} ); 
       } else this.setState( {inputNameValid: false} );
       if((EO.target.value).length > 0 && this.state.inputPriceValid== true && this.state.inputPhotoValid== true && this.state.inputQuantityValid== true &&this.state.inputDrugformValid== true) {
-          this.setState( {allValid: true} );
-        } else this.setState( {allValid: false} );
+          this.setState( {allValid: true, editValid: true} );
+        } else this.setState( {allValid: false, editValid: false} );
         this.props.cbChanged();
+        console.log(EO.target.value);
     }
 
     priceChange = (EO) => {
-      this.setState( {inputPrice: Number(EO.target.value), priceChange: false} )
+      this.setState( {inputPrice: (EO.target.value), priceChange: false} )
       if (this.props.editOn==true) {
         if(this.state.nameChange){
           this.setState( {inputName: this.props.drugs.map(e => e.code == this.props.editedProductCode && e.name).filter(a => a != false).join("")} )};
         if(this.state.photoChange){
           this.setState( {inputPhoto: this.props.drugs.map(e => e.code == this.props.editedProductCode && e.photo).filter(a => a != false).join("")} )};
         if(this.state.quantityChange){
-          this.setState( {inputQuantity: Number(this.props.drugs.map(e => e.code == this.props.editedProductCode && e.quantity).filter(a => a != false).join(""))} )};
+          this.setState( {inputQuantity: (this.props.drugs.map(e => e.code == this.props.editedProductCode && e.quantity).filter(a => a != false).join(""))} )};
         if(this.state.drugformChange){
           this.setState( {inputDrugform: this.props.drugs.map(e => e.code == this.props.editedProductCode && e.drugform).filter(a => a != false).join("")} )};
         this.setState( {
@@ -105,13 +107,14 @@ class ProductCard extends React.Component {
           inputDrugformValid: true,
         } )
       }
-      if((EO.target.value).length > 0 ) {
+      if(EO.target.value > 0 ) {
         this.setState( {inputPriceValid: true} ); 
       } else this.setState( {inputPriceValid: false} );
-      if(this.state.inputNameValid== true && (EO.target.value).length > 0 && this.state.inputPhotoValid== true && this.state.inputQuantityValid== true && this.state.inputDrugformValid== true) {
-          this.setState( {allValid: true} );
-        } else this.setState( {allValid: false} );
+      if(this.state.inputNameValid== true && EO.target.value > 0 && this.state.inputPhotoValid== true && this.state.inputQuantityValid== true && this.state.inputDrugformValid== true) {
+          this.setState( {allValid: true, editValid: true} );
+        } else this.setState( {allValid: false, editValid: false} );
         this.props.cbChanged();
+        console.log(EO.target.value);
     }
 
     photoChange = (EO) => {
@@ -120,9 +123,9 @@ class ProductCard extends React.Component {
         if(this.state.nameChange){
           this.setState( {inputName: this.props.drugs.map(e => e.code == this.props.editedProductCode && e.name).filter(a => a != false).join("")} )};
         if(this.state.priceChange){
-          this.setState( {inputPrice: Number(this.props.drugs.map(e => e.code == this.props.editedProductCode && e.price).filter(a => a != false).join(""))} )};
+          this.setState( {inputPrice: (this.props.drugs.map(e => e.code == this.props.editedProductCode && e.price).filter(a => a != false).join(""))} )};
         if(this.state.quantityChange){
-          this.setState( {inputQuantity: Number(this.props.drugs.map(e => e.code == this.props.editedProductCode && e.quantity).filter(a => a != false).join(""))} )};
+          this.setState( {inputQuantity: (this.props.drugs.map(e => e.code == this.props.editedProductCode && e.quantity).filter(a => a != false).join(""))} )};
         if(this.state.drugformChange){
           this.setState( {inputDrugform: this.props.drugs.map(e => e.code == this.props.editedProductCode && e.drugform).filter(a => a != false).join("")} )};
         this.setState( {
@@ -136,18 +139,19 @@ class ProductCard extends React.Component {
         this.setState( {inputPhotoValid: true} ); 
       } else this.setState( {inputPhotoValid: false} );
       if(this.state.inputNameValid== true && this.state.inputPriceValid== true && (EO.target.value).length > 0 && this.state.inputQuantityValid== true && this.state.inputDrugformValid== true) {
-          this.setState( {allValid: true} );
-        } else this.setState( {allValid: false} );
+          this.setState( {allValid: true, editValid: true} );
+        } else this.setState( {allValid: false, editValid: false} );
         this.props.cbChanged();
+        console.log(EO.target.value);
     }
 
     quantityChange = (EO) => {
-      this.setState( {inputQuantity: Number(EO.target.value), quantityChange: false} )
+      this.setState( {inputQuantity: (EO.target.value), quantityChange: false} )
       if (this.props.editOn==true) {
         if(this.state.nameChange){
           this.setState( {inputName: this.props.drugs.map(e => e.code == this.props.editedProductCode && e.name).filter(a => a != false).join("")} )};
         if(this.state.priceChange){
-          this.setState( {inputPrice: Number(this.props.drugs.map(e => e.code == this.props.editedProductCode && e.price).filter(a => a != false).join(""))} )};
+          this.setState( {inputPrice: (this.props.drugs.map(e => e.code == this.props.editedProductCode && e.price).filter(a => a != false).join(""))} )};
         if(this.state.photoChange){
           this.setState( {inputPhoto: this.props.drugs.map(e => e.code == this.props.editedProductCode && e.photo).filter(a => a != false).join("")} )};
         if(this.state.drugformChange){
@@ -159,13 +163,14 @@ class ProductCard extends React.Component {
           inputDrugformValid: true,
         } )
       }
-      if((EO.target.value).length > 0 ) {
+      if(EO.target.value > 0 ) {
         this.setState( {inputQuantityValid: true} ); 
       } else this.setState( {inputQuantityValid: false} );
-      if(this.state.inputNameValid== true && this.state.inputPriceValid== true && this.state.inputPhotoValid== true && (EO.target.value).length > 0 && this.state.inputDrugformValid== true) {
-          this.setState( {allValid: true} );
-        } else this.setState( {allValid: false} );
+      if(this.state.inputNameValid== true && this.state.inputPriceValid== true && this.state.inputPhotoValid== true && EO.target.value > 0 && this.state.inputDrugformValid== true) {
+          this.setState( {allValid: true, editValid: true} );
+        } else this.setState( {allValid: false, editValid: false} );
         this.props.cbChanged();
+        console.log(EO.target.value);
     }
 
     drugformChange = (EO) => {
@@ -174,34 +179,35 @@ class ProductCard extends React.Component {
         if(this.state.nameChange){
           this.setState( {inputName: this.props.drugs.map(e => e.code == this.props.editedProductCode && e.name).filter(a => a != false).join("")} )};
         if(this.state.priceChange){
-          this.setState( {inputPrice: Number(this.props.drugs.map(e => e.code == this.props.editedProductCode && e.price).filter(a => a != false).join(""))} )};
+          this.setState( {inputPrice: (this.props.drugs.map(e => e.code == this.props.editedProductCode && e.price).filter(a => a != false).join(""))} )};
         if(this.state.photoChange){
           this.setState( {inputPhoto: this.props.drugs.map(e => e.code == this.props.editedProductCode && e.photo).filter(a => a != false).join("")} )};
         if(this.state.quantityChange){
-          this.setState( {inputQuantity: Number(this.props.drugs.map(e => e.code == this.props.editedProductCode && e.quantity).filter(a => a != false).join(""))} )};
+          this.setState( {inputQuantity: (this.props.drugs.map(e => e.code == this.props.editedProductCode && e.quantity).filter(a => a != false).join(""))} )};
         this.setState( {
           inputNameValid: true,
           inputPriceValid: true,
           inputPhotoValid: true,
-          inputQuantityValid: true
+          inputQuantityValid: true,
         } )
       }
       if((EO.target.value).length > 0 ) {
         this.setState( {inputDrugformValid: true} ); 
       } else this.setState( {inputDrugformValid: false} );
       if(this.state.inputNameValid== true && this.state.inputPriceValid== true && this.state.inputPhotoValid== true && this.state.inputQuantityValid== true && (EO.target.value).length > 0) {
-          this.setState( {allValid: true} );
-        } else this.setState( {allValid: false} );
+          this.setState( {allValid: true, editValid: true} );
+        } else this.setState( {allValid: false, editValid: false} );
         this.props.cbChanged();
+        console.log(EO.target.value);
     }
 
     addBtn = () => {
       let prod = {};
       prod.name = this.state.inputName;
       prod.code = this.props.ID;
-      prod.price = this.state.inputPrice;
+      prod.price = Number(this.state.inputPrice);
       prod.photo = this.state.inputPhoto;
-      prod.quantity = this.state.inputQuantity;
+      prod.quantity = Number(this.state.inputQuantity);
       prod.drugform = this.state.inputDrugform;
       this.props.cbAdd(prod);
       this.cancelBtn();
@@ -211,9 +217,9 @@ class ProductCard extends React.Component {
       let edit = {};
       edit.name = this.state.inputName;
       edit.code = this.props.editedProductCode;
-      edit.price =  this.state.inputPrice;
+      edit.price =  Number(this.state.inputPrice);
       edit.photo = this.state.inputPhoto;
-      edit.quantity = this.state.inputQuantity;
+      edit.quantity = Number(this.state.inputQuantity);
       edit.drugform = this.state.inputDrugform;
       this.props.cbSave(edit);
       this.cancelBtn();
@@ -321,7 +327,7 @@ class ProductCard extends React.Component {
                   </label>
                   <label className='buttons'>
                     {this.props.newProductOn == true &&<input type="button" value="Add" onClick={this.addBtn} disabled={!this.state.allValid}/>}
-                    {this.props.editOn == true && <input type="button" value="Save" onClick={this.saveBtn} disabled={!this.state.allValid}/>}
+                    {this.props.editOn == true && <input type="button" value="Save" onClick={this.saveBtn} disabled={!this.state.editValid}/>}
                     <input type="button" value="Cancel" onClick={this.cancelBtn}/>
                   </label>
 

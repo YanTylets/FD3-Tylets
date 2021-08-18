@@ -26,7 +26,6 @@ class MainShop extends React.Component {
        newProdBtnClass: 'new-product-btn',
        editOn: false,
        editedProductCode: null,
-       editedMarker: false
     }
 
     productSelected = (code) => {
@@ -52,7 +51,6 @@ class MainShop extends React.Component {
     cancelNewProd = () => {
       this.setState( {newProductOn:false, newProdBtnClass: 'new-product-btn', 
       deleteDisabled:false, editDisabled:false, editOn:false, 
-      editedMarker: false,
       editedProductChange: false} )
     }
 
@@ -64,13 +62,11 @@ class MainShop extends React.Component {
       this.setState( {editOn: true, editedProductCode: code, selectedProductCode:null, 
         newProdBtnClass: 'new-product-btn-on', 
         deleteDisabled:true,
-        editedMarker: true
       } );
     }
 
     changed = () => {
-      this.setState( { editedProductChange: true, editDisabled: true, editedMarker: false} );
-      console.log(this.state.editedProductChange)
+      this.setState( { editedProductChange: true, editDisabled: true} );
     }
 
     save =(edit) => {
@@ -137,7 +133,6 @@ class MainShop extends React.Component {
             editOn={this.state.editOn}
             editedProductCode={this.state.editedProductCode}
             cbChanged={this.changed}
-            editedMarker={this.state.editedMarker}
             cbSave={this.save}
             />
 
