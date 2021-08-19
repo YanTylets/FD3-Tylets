@@ -70,7 +70,7 @@ class MainShop extends React.Component {
     }
 
     save =(edit) => {
-      this.state.drugs.splice((this.state.editedProductCode-1), 1, edit);
+      this.state.drugs.splice((this.state.drugs.findIndex(item => item.code == this.state.editedProductCode)), 1, edit);
       console.log(edit);
     }
 
