@@ -1,8 +1,8 @@
 {
-  "name": "ishop3",
+  "name": "RainbowFrame",
   "version": "1.0.0",
-  "description": "ishop3",
-  "main": "MainShop.js",
+  "description": "RainbowFrame",
+  "main": "App.js",
   "scripts": {
     "build": ".\\node_modules\\.bin\\webpack",
     "start": ".\\node_modules\\.bin\\lite-server",
