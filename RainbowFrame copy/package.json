@@ -1,0 +1,30 @@
+{
+  "name": "RainbowFrame",
+  "version": "1.0.0",
+  "description": "RainbowFrame",
+  "main": "App.js",
+  "scripts": {
+    "build": ".\\node_modules\\.bin\\webpack",
+    "start": ".\\node_modules\\.bin\\lite-server",
+    "livebuild": "webpack serve"
+  },
+  "author": "Yan Tylets",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "lite-server": "^2.6.1",
+    "mini-css-extract-plugin": "^2.1.0",
+    "webpack": "^5.46.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
