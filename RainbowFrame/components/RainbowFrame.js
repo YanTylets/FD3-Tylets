@@ -8,13 +8,23 @@ class RainbowFrame extends React.Component {
   };
   
   render() {
-    return (
-      <div style={{border:"solid 1px "+this.props.colors, padding:"10px"}}>
-          {this.props.children}
-      </div>
-    );
-  }
+      let frame = this.props.children;
+      {this.props.colors.forEach((item) =>
+        frame = <div style={{border:"solid 10px "+ item, padding:"10px", size:"fit-content"}}>
+             {frame}
+         </div>)
+         }
+    
 
+
+
+    return (
+      <div>
+          {frame}
+      </div>
+
+    );
 }
+};
 
 export default RainbowFrame;
