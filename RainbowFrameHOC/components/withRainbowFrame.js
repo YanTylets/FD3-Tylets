@@ -1,11 +1,13 @@
 import React from 'react';
 
-function withRainbowFrame(Comp) {
 
-    return props => 
-      <div style ={{border:"solid 10px", padding:"10px", width: "fit-content"}}>
-          <Comp {...props} />
-      </div>  
-};
+let withRainbowFrame = colors => Comp =>  props => {
+let frame = <Comp {...props} />;
+colors.forEach((item) =>
+  frame = <div style={{border:"solid 10px "+ item, padding:"10px", width: "fit-content"}}>
+       {frame}
+   </div>)
+   return frame;
+}
 
 export {withRainbowFrame};
