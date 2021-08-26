@@ -10,8 +10,8 @@ import ProductCard from './ProductCard';
 class MainShop extends React.Component {
 
   static propTypes = {
-        shopName: PropTypes.string,
-        drugs: PropTypes.array,
+        shopName: PropTypes.string.isRequired,
+        drugs: PropTypes.array.isRequired,
     };
 
     state = {
@@ -29,12 +29,9 @@ class MainShop extends React.Component {
     }
 
     productSelected = (code) => {
-      this.setState( {productClass: 'product'} );
-      console.log('selected ' +code);
+      console.log('selected ' +this.state.selectedProductCode);
       this.setState( {selectedProductCode: code, editOn: false, newProdBtnClass: 'new-product-btn', 
-      deleteDisabled:false } );
-      this.setState( {selectedProductCode: code} );
-
+      deleteDisabled:false } ); 
   }
 
     delete = (code, name) => {
@@ -59,10 +56,12 @@ class MainShop extends React.Component {
       this.setState ( {maxID: this.state.maxID+=1} )
     }
     edit = (code) => {
+      console.log(this.state.editedProductCode)
       this.setState( {editOn: true, editedProductCode: code, selectedProductCode:null, 
         newProdBtnClass: 'new-product-btn-on', 
         deleteDisabled:true,
       } );
+
     }
 
     changed = () => {
@@ -98,11 +97,10 @@ class MainShop extends React.Component {
             newProductOn={this.state.newProductOn}
             cbedit={this.edit}
             editedProductChange={this.state.editedProductChange}
-
-
-          />
-               
+          />   
         );
+        let defaultProductInfo = {"name":" ", "code":null, "price":null, "photo":" ", " quantity":null, "drugform":" "}
+        let productInfo = this.state.drugs.find(e => e.code == (this.state.selectedProductCode || this.state.editedProductCode))
 
         return (
           <div className="Main">
@@ -124,7 +122,12 @@ class MainShop extends React.Component {
             </table>
 
             <input className={this.state.newProdBtnClass} type="button" value="New product" onClick={this.newProduct}/>
-            <ProductCard selectedProductCode={this.state.selectedProductCode}
+            <ProductCard 
+            productInfo={(this.state.editOn || this.state.selectedProductCode!=null) ?
+              productInfo:
+              defaultProductInfo
+              }
+            selectedProductCode={this.state.selectedProductCode}
             drugs={this.state.drugs}
             newProductOn={this.state.newProductOn}
             ID={this.state.maxID}

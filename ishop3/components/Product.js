@@ -38,7 +38,7 @@ class Product extends React.Component {
 
     clickEdit = (e) => {
         e.stopPropagation();
-        this.props.cbedit(this.props.code, this.props.name, this.props.price, this.props.photo, this.props.quantity, this.props.drugform);
+        this.props.cbedit(this.props.code);
     }
 
     render() {
