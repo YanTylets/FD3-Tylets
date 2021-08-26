@@ -10,7 +10,7 @@ class RainbowFrame extends React.Component {
   render() {
       let frame = this.props.children;
       {this.props.colors.forEach((item) =>
-        frame = <div style={{border:"solid 10px "+ item, padding:"10px", size:"fit-content"}}>
+        frame = <div style={{border:"solid 10px "+ item, padding:"10px", width:"fit-content"}}>
              {frame}
          </div>)
          }
