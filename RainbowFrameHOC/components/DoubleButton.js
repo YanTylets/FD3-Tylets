@@ -29,7 +29,6 @@ class DoubleButton extends React.Component {
             </div>
 
         );
-
     }
 }
 

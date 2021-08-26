@@ -8,6 +8,7 @@ let FramedDoubleButton=withRainbowFrame(DoubleButton);
 
 
 ReactDOM.render(
+
   <div>
  <DoubleButton caption1="однажды" caption2="пору" cbPressed={ num => alert(num) } >
   в студёную зимнюю
@@ -17,4 +18,5 @@ ReactDOM.render(
   </FramedDoubleButton>
   </div>
   , document.getElementById('container') 
+  
 );
