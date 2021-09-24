@@ -1,0 +1,56 @@
+.Recommendations h2 {
+    margin-top: 5rem;
+    margin-left: 1rem;
+    max-width: fit-content;
+}
+.Recommendations{
+    display: flex;
+    max-width:fit-content;
+    flex-direction: column;
+}
+.container {
+    background-color: rgb(2, 9, 31);
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.rec-slider {
+    max-width:fit-content;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+.rec-movie img {
+    height: auto;
+    width: 20rem;
+    border-radius: 10px;
+}
+
+.text-line {
+max-width: fit-content;
+}
+
+.text-line p {
+    display: inline;
+}
+.text-line p:first-child {
+    max-width:15rem;
+    overflow: hidden;
+    float: left;
+}
+.text-line p:last-child {
+    margin-left: 0.5rem;
+    float: right;
+}
+
+
+.rec-movie {
+    max-width:fit-content;
+    margin: 1rem;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

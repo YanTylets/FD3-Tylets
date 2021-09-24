@@ -1,0 +1,47 @@
+.movie_info {
+    color: white;
+    background-color: rgb(2, 9, 31)
+
+}
+.poster-image {
+    margin: 50px 40px 50px 250px;
+    max-width: 350px;
+}
+.movie-main-info {
+    max-width: 100%;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+}
+.text-info {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+.original-title {
+    font-style: italic;
+    margin-top: 0;
+    opacity: 0.8;
+}
+
+.genre {
+    font-style: italic;
+    margin-top: 0;
+}
+.rating {
+    /* position: absolute; */
+}
+.percent {
+    position: relative;
+    top: 45px;
+    left: 17px;
+    font-size: 20px;  
+    font-weight: 500;
+}
+

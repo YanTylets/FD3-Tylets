@@ -1,0 +1,44 @@
+.cast h2 {
+    margin-top: 5rem;
+    margin-left: 1rem;
+    max-width: fit-content;
+}
+.cast{
+    display: flex;
+    max-width:fit-content;
+    flex-direction: column;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.cast-slider {
+    max-width:fit-content;
+    display: flex;
+    justify-content: center;
+
+}
+.actor img {
+    height: auto;
+    width: 10rem;
+}
+.actor p {
+    margin: 0;
+    max-width: fit-content;
+    text-align: center;
+}
+
+
+.actor {
+    max-width:fit-content;
+    margin: 1rem;
+    border-radius: 3px;
+    border: white solid 1px;
+    color: black;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}

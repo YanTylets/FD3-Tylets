@@ -1,0 +1,33 @@
+header {
+    background-color: rgb(2, 9, 31);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    position: sticky;
+    top:0;
+    z-index: 2;
+    opacity: 0.6;
+}
+
+.logo{
+    display: flex;
+}
+
+.main-page-link {
+    background: no-repeat center/100% url(../assets/cinema.png);
+    padding: 1.5rem;
+    color: white;
+    transition: 1s;
+    margin-left: 2rem;
+    
+}
+
+.main-page-link svg {
+    padding-top: 20px;
+    width: 1rem;
+    height: 1rem;
+}
+.main-page-link:hover {
+  opacity: 0.5;
+}
