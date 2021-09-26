@@ -55,6 +55,7 @@ header {
     font-weight: bold;
     text-decoration: none;
     transition: 0.7s;
+    margin-right: 2rem;
 }
 .favorite-list-link:hover {
     transform: scale(1.1);
