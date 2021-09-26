@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 
 import './Movie.css'
+import Favorite from './Favorite';
 const IMG_API = "https://image.tmdb.org/t/p/w1280"
 
 class Movie extends React.PureComponent {
@@ -47,6 +48,7 @@ class Movie extends React.PureComponent {
                       <h2>Описание:</h2>
                       <p>{this.props.overview}</p>
                       <NavLink to={"/movie/"+this.props.id} className="movie-info-link"> Подробнее...</NavLink>
+
 
 
                   </div>

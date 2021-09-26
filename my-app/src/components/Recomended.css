@@ -15,10 +15,11 @@
     justify-content: center;
 }
 .rec-slider {
-    max-width:fit-content;
+    max-width:100%;
     display: flex;
     justify-content: center;
     margin-bottom: 5rem;
+    flex-wrap: wrap;
 }
 .rec-movie img {
     height: auto;

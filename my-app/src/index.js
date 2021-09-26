@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import ScrollToTop from './components/ScrollToTop';
 import PagesRouter from './pages/PagesRouter.';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
@@ -8,6 +9,7 @@ import { BrowserRouter } from 'react-router-dom';
 ReactDOM.render(
   // <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <PagesRouter/>
     </BrowserRouter>,
   // </React.StrictMode>,

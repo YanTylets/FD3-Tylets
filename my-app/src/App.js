@@ -8,24 +8,31 @@ import './App.css';
 
 import Movie from './components/Movie';
 import Header from './components/Header';
+import Pagination from './components/Pagination';
 
 
 class App extends React.PureComponent {
 
+  state = {
+    update: false,
+    perPage: 60
+  }
+
   static propTypes = {
+    page: PropTypes.number,
     movies: PropTypes.object.isRequired,
-  };
+  }
 
   componentDidMount() {
     this.props.dispatch( moviesThunkAC(this.props.dispatch) );
-    console.log(this.props.movies)
   }
 
 
   render() {
     let moviesList =
       this.props.movies.data ?
-        this.props.movies.data.map((movie) =>
+      (this.props.page?
+          (this.props.movies.data.slice(((this.props.page*this.state.perPage + 1*this.props.page)-this.state.perPage), (this.props.page*this.state.perPage + 1*this.props.page)).map((movie) =>
           <Movie 
             key={movie.id} 
             title={movie.title}
@@ -34,7 +41,17 @@ class App extends React.PureComponent {
             vote_average={movie.vote_average}
             id={movie.id}
           />
-        ) : 
+        )) :
+        (this.props.movies.data.slice(0, this.state.perPage).map((movie) =>
+        <Movie 
+          key={movie.id} 
+          title={movie.title}
+          poster_path={movie.poster_path}
+          overview={movie.overview}
+          vote_average={movie.vote_average}
+          id={movie.id}
+        />
+      ))):
         <div></div>
 
     if ( this.props.movies.status==='loading' )
@@ -49,6 +66,7 @@ class App extends React.PureComponent {
         <div className="App">
           {moviesList}
         </div>
+        <Pagination currPage={this.props.page}/>
         </div>
     );
   }

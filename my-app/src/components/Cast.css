@@ -14,7 +14,8 @@
     flex-wrap: wrap;
 }
 .cast-slider {
-    max-width:fit-content;
+    flex-wrap: wrap;
+    max-width:100%;
     display: flex;
     justify-content: center;
 

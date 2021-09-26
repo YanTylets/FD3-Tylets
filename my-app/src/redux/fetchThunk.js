@@ -1,5 +1,6 @@
 import {FEATURED_API} from '../AppData'
 import { moviesLoadingAC, moviesErrorAC, moviesSetAC } from "./moviesListAC";
+import {favoritesLoadingAC, favoritesErrorAC, favoritesSetAC} from "./favoriteListAC";
 
 function moviesThunkAC(dispatch) {
     // Как и любой action creator, moviesThunkAC должен вернуть action,
@@ -10,7 +11,7 @@ function moviesThunkAC(dispatch) {
     return function() {
         dispatch( moviesLoadingAC() );
         let apiArray = [];
-        for(let i=1; i<15; i++) {
+        for(let i=1; i<500; i++) {
           apiArray.push(fetch(FEATURED_API +i)
               .then(res => {
                 if(!res.ok)
@@ -37,7 +38,29 @@ function moviesThunkAC(dispatch) {
               })
             
     }
+}
+
+function favoritesThunkAC(dispatch, id) {
+
+  return function() {
+      dispatch( favoritesLoadingAC() );
+        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=953aabad8f5d4a2f206f8f80281ffd31&language=ru-RU`)
+            .then(res => {
+              if(!res.ok)
+                throw new Error("fetch error " + res.status);
+              else 
+                return res.json()
+            })
+            .then(data => {
+              dispatch( favoritesSetAC(data));
+            })
+            .catch (error => {
+              console.error(error);
+              dispatch(favoritesErrorAC());
+            })
+          
+  }
 
 }
 
-export {moviesThunkAC};
+export {moviesThunkAC, favoritesThunkAC};

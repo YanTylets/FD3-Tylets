@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Header from './Header';
-
-
 import Cast from './Cast';
 import MyChart from './Chart';
+import Favorite from './Favorite';
 
 
 import './MovieInfo.css';
@@ -22,6 +21,7 @@ class MovieInfo extends React.PureComponent {
     state = {
         info: [],
         dataReady: false,
+        added: false
     }
 
     componentDidUpdate(prevProps) {
@@ -102,9 +102,12 @@ class MovieInfo extends React.PureComponent {
                     (this.state.info.genres.map(i => i.name)).join(', '):
                     ''} 
                   </p>
+                  <div className='bttn-rating'>
                   <div className='rating'>
                         <div className='percent'>{rating}%</div>
                         <MyChart className='circle' vote={this.state.info.vote_average}/>
+                    </div>
+                      <Favorite movieId = {this.props.movieId}/>
                     </div>
                   <p style={{ fontStyle:"italic", fontFamily:'Helvetica Neue', fontSize:"23px", opacity:"0.6"}}>{this.state.info.tagline}</p>
 
