@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 
 
 import './Movie.css'
-import Favorite from './Favorite';
 const IMG_API = "https://image.tmdb.org/t/p/w1280"
 
 class Movie extends React.PureComponent {

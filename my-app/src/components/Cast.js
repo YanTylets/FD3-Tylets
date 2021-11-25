@@ -53,7 +53,7 @@ class Cast extends React.Component {
     render() { 
       let actor = this.state.credits.map(i => 
         <div className='actor' key = {i.cast_id}>
-          <img src={IMG_API+i.profile_path}/>
+          <img src={IMG_API+i.profile_path} alt={i.original_name}/>
           <p>{i.original_name}</p>  
           <p>{i.character}</p>
         </div>);

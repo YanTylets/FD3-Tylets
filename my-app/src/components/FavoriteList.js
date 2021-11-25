@@ -28,7 +28,7 @@ class FavoriteList extends React.PureComponent {
         return (
             <li className='list-item' key={item.id}>
             <NavLink to={"/movie/"+item.id}> 
-            <img className='list-img' src={IMG_API+item.poster_path}/>
+            <img className='list-img' src={IMG_API+item.poster_path} alt={item.title}/>
             </NavLink>
             <p className='title'>{item.title}</p>
             <p className='vote'>{item.vote_average}</p>

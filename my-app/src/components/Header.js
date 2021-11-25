@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
 import './Header.css'
-import Login from './Login';
 
 class Header extends React.PureComponent {
 

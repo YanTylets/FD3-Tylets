@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Chart from "chart.js";
 
 var DoughnutChart = require("react-chartjs").Doughnut;
 

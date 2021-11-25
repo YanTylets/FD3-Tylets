@@ -36,13 +36,13 @@ class Pagination extends React.PureComponent {
             if(currPage > 5) {
                 for (let i = currPage-2; i <= currPage+3; i++) {
                     pages.push(i)
-                    if(i == pagesCount) break
+                    if(i === pagesCount) break
                 }
             }
             else {
                 for (let i = 1; i <= 6; i++) {
                     pages.push(i)
-                    if(i == pagesCount) break
+                    if(i === pagesCount) break
                 }
             }
         }  else {
