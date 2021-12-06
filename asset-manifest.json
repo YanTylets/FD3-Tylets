@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/FD3-Tylets/my-app/static/css/main.251c8b97.chunk.css",
+    "main.js": "/FD3-Tylets/my-app/static/js/main.854ed45f.chunk.js",
+    "main.js.map": "/FD3-Tylets/my-app/static/js/main.854ed45f.chunk.js.map",
+    "runtime-main.js": "/FD3-Tylets/my-app/static/js/runtime-main.7d791f1d.js",
+    "runtime-main.js.map": "/FD3-Tylets/my-app/static/js/runtime-main.7d791f1d.js.map",
+    "static/js/2.88c1f16c.chunk.js": "/FD3-Tylets/my-app/static/js/2.88c1f16c.chunk.js",
+    "static/js/2.88c1f16c.chunk.js.map": "/FD3-Tylets/my-app/static/js/2.88c1f16c.chunk.js.map",
+    "static/js/3.b15606c3.chunk.js": "/FD3-Tylets/my-app/static/js/3.b15606c3.chunk.js",
+    "static/js/3.b15606c3.chunk.js.map": "/FD3-Tylets/my-app/static/js/3.b15606c3.chunk.js.map",
+    "index.html": "/FD3-Tylets/my-app/index.html",
+    "static/css/main.251c8b97.chunk.css.map": "/FD3-Tylets/my-app/static/css/main.251c8b97.chunk.css.map",
+    "static/js/2.88c1f16c.chunk.js.LICENSE.txt": "/FD3-Tylets/my-app/static/js/2.88c1f16c.chunk.js.LICENSE.txt",
+    "static/media/Header.css": "/FD3-Tylets/my-app/static/media/cinema.251c98b2.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7d791f1d.js",
+    "static/js/2.88c1f16c.chunk.js",
+    "static/css/main.251c8b97.chunk.css",
+    "static/js/main.854ed45f.chunk.js"
+  ]
+}
