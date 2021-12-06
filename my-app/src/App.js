@@ -15,7 +15,7 @@ class App extends React.PureComponent {
 
   state = {
     update: false,
-    perPage: 60
+    perPage: 24
   }
 
   static propTypes = {
