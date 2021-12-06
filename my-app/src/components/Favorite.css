@@ -46,10 +46,10 @@
 }
 
 .button:hover{
-    background-color:#22254b;
-    color:#0088cc;
+    /* background-color:#22254b; */
+    color: #f94e66;
     cursor: pointer;
-    box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 1px 1px 1px #22254b, inset 0px -1px 1px 1px #22254b;
+    box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 1px 1px 1px #f94e66, inset 0px -1px 1px 1px #f94e66;
 
 }
 

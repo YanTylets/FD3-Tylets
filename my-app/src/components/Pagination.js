@@ -32,15 +32,15 @@ class Pagination extends React.PureComponent {
         const pages = [];
         const pagesCount = Math.ceil((this.props.movies.data.length)/60);
         const currPage = this.props.currPage ? this.props.currPage : 1;
-        if(pagesCount > 6) {
-            if(currPage > 5) {
-                for (let i = currPage-2; i <= currPage+3; i++) {
+        if(pagesCount > 5) {
+            if(currPage > 3) {
+                for (let i = currPage-2; i <= currPage+2; i++) {
                     pages.push(i)
                     if(i === pagesCount) break
                 }
             }
             else {
-                for (let i = 1; i <= 6; i++) {
+                for (let i = 1; i <= 5; i++) {
                     pages.push(i)
                     if(i === pagesCount) break
                 }

@@ -54,4 +54,9 @@ max-width: fit-content;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: 0.7s;
+}
+
+.rec-movie:hover {
+  transform: scale(1.1);
 }
