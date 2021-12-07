@@ -54,7 +54,7 @@ class Recomended extends React.Component {
     render() { 
       let recMovie = this.state.recMovies.map(i => 
         <div className='rec-movie' key = {i.id}>
-          <NavLink exact to={"/movie/"+i.id}> <img src={IMG_API+i.backdrop_path} alt={i.title}/></NavLink>
+          <NavLink exact to={"/FD3-Tylets/movie/"+i.id}> <img src={IMG_API+i.backdrop_path} alt={i.title}/></NavLink>
           <div className='text-line'>
           <p>{i.title}</p>  
           <p>{Math.floor(i.vote_average*10)}%</p>

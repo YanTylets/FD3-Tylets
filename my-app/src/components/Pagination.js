@@ -57,7 +57,7 @@ class Pagination extends React.PureComponent {
         return(
             <div className='pages'>
                 {this.state.pages.map((page, index)=> 
-                <NavLink to={`/pages/${page}`}><span key={index} className={this.props.currPage===page ? 'current-page' : 'page'}>{page}</span></NavLink>
+                <NavLink to={`/FD3-Tylets/pages/${page}`}><span key={index} className={this.props.currPage===page ? 'current-page' : 'page'}>{page}</span></NavLink>
                 )}
 
             </div>

@@ -30,9 +30,9 @@ class PagesRouter extends React.Component {
         <Provider store={store}>
         <div>
           <Route path="/FD3-Tylets" exact component={Page_MoviesList} />
-          <Route path="/pages/:page" exact component={Page_MoviesList_pages} />
-          <Route path="/movie/:mid" exact component={Page_MovieInfo} />
-          <Route path="/favlist" exact component={Page_FavoriteList} />
+          <Route path="/FD3-Tylets/pages/:page" exact component={Page_MoviesList_pages} />
+          <Route path="/FD3-Tylets/movie/:mid" exact component={Page_MovieInfo} />
+          <Route path="/FD3-Tylets/favlist" exact component={Page_FavoriteList} />
         </div>
         </Provider>
       );

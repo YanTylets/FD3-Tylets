@@ -19,7 +19,7 @@ class Header extends React.PureComponent {
                 <NavLink to={"/FD3-Tylets"} className="main-page-link" title="Go Home"><svg></svg></NavLink>
                 <h2>MoviesDB</h2>
               </div>
-              <NavLink to={"/favlist"} className={(this.props.favorites.data.length >0)? 'favorite-list-link-active' : 'favorite-list-link'}>Избранное({this.props.favorites.data.length})</NavLink>
+              <NavLink to={"/FD3-Tylets/favlist"} className={(this.props.favorites.data.length >0)? 'favorite-list-link-active' : 'favorite-list-link'}>Избранное({this.props.favorites.data.length})</NavLink>
             </header>
 
         );
