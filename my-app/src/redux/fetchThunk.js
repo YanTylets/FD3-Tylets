@@ -11,7 +11,7 @@ function moviesThunkAC(dispatch) {
     return function() {
         dispatch( moviesLoadingAC() );
         let apiArray = [];
-        for(let i=1; i<500; i++) {
+        for(let i=1; i<100; i++) {
           apiArray.push(fetch(FEATURED_API +i)
               .then(res => {
                 if(!res.ok)

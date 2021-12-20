@@ -30,7 +30,7 @@ class Pagination extends React.PureComponent {
 
     creator = () => {
         const pages = [];
-        const pagesCount = Math.ceil((this.props.movies.data.length)/60);
+        const pagesCount = Math.ceil((this.props.movies.data.length)/24);
         const currPage = this.props.currPage ? this.props.currPage : 1;
         if(pagesCount > 5) {
             if(currPage > 3) {
