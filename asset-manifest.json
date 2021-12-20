@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/FD3-Tylets/static/css/main.d272a1bf.chunk.css",
-    "main.js": "/FD3-Tylets/static/js/main.c656997c.chunk.js",
-    "main.js.map": "/FD3-Tylets/static/js/main.c656997c.chunk.js.map",
+    "main.js": "/FD3-Tylets/static/js/main.4f22fa69.chunk.js",
+    "main.js.map": "/FD3-Tylets/static/js/main.4f22fa69.chunk.js.map",
     "runtime-main.js": "/FD3-Tylets/static/js/runtime-main.09309466.js",
     "runtime-main.js.map": "/FD3-Tylets/static/js/runtime-main.09309466.js.map",
     "static/js/2.88c1f16c.chunk.js": "/FD3-Tylets/static/js/2.88c1f16c.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.09309466.js",
     "static/js/2.88c1f16c.chunk.js",
     "static/css/main.d272a1bf.chunk.css",
-    "static/js/main.c656997c.chunk.js"
+    "static/js/main.4f22fa69.chunk.js"
   ]
 }
