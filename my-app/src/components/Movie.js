@@ -45,7 +45,7 @@ class Movie extends React.PureComponent {
 
                   <div className="movie-over">
                       <h2>Описание:</h2>
-                      <p>{this.props.overview}</p>
+                      <p>{this.props.overview.slice(0,200)}...</p>
                       <NavLink to={"/FD3-Tylets/movie/"+this.props.id} className="movie-info-link"> Подробнее...</NavLink>
 
 

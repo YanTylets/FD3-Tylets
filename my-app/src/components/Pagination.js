@@ -30,7 +30,7 @@ class Pagination extends React.PureComponent {
 
     creator = () => {
         const pages = [];
-        const pagesCount = Math.ceil((this.props.movies.data.length)/24);
+        const pagesCount =this.props.movies.data ? Math.ceil((this.props.movies.data.length)/24) : 1;
         const currPage = this.props.currPage ? this.props.currPage : 1;
         if(pagesCount > 5) {
             if(currPage > 3) {
@@ -57,7 +57,7 @@ class Pagination extends React.PureComponent {
         return(
             <div className='pages'>
                 {this.state.pages.map((page, index)=> 
-                <NavLink to={`/FD3-Tylets/pages/${page}`}><span key={index} className={this.props.currPage===page ? 'current-page' : 'page'}>{page}</span></NavLink>
+                <NavLink to={`/FD3-Tylets/pages/${page}`} key ={index}><span key={index} className={this.props.currPage===page ? 'current-page' : 'page'}>{page}</span></NavLink>
                 )}
 
             </div>
